@@ -11,16 +11,18 @@ const PrivacyPolicySection = () => {
     <section className="py-8 bg-white">
       <div className="container">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-semibold">{content?.title}</h1>
-          <p className="text-gray-400">{content?.lastUpdate}</p>
+          <h1 className="text-3xl font-semibold">
+            {content?.titlePrivacyPolicy}
+          </h1>
+          <p className="text-gray-400">{content?.lUpdate}</p>
         </div>
         <div className="mt-8">
-          <p>{content?.details}</p>
+          <p>{content?.policyDetails}</p>
           <h2 className="my-7 mb-2 font-semibold text-xl">
-            {content?.subTitle}
+            {content?.subTitlePolicy}
           </h2>
-          <p>{content?.details2}</p>
-          <p className="mt-2">{content?.details3}</p>
+          <p>{content?.policyDetails2}</p>
+          <p className="mt-2">{content?.policyDetails3}</p>
         </div>
       </div>
     </section>

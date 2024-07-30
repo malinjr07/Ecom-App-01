@@ -15,52 +15,52 @@ const Register: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
-      loginUrl={content?.loginUrl}
-      textBelowBtn={content?.textBelowBtn}
-      loginText={content?.loginText}
+      title={content?.hiTitleWelcome}
+      subTitle={content?.subTitleLoginContinue}
+      btnText={content?.btnTextRegister}
+      loginUrl={content?.loginPageUrl}
+      textBelowBtn={content?.alreadyHaveBtn}
+      loginText={content?.loginTextRegister}
     >
       <div className="mb-9 space-y-[18px]">
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="fullName"
-          placeholder={content?.placeholder}
+          placeholder={content?.placeholderFName}
         />
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="fullName"
-          placeholder={content?.placeholder2}
+          placeholder={content?.placeholderLName}
         />
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="phone"
-          placeholder={content?.placeholder3}
+          placeholder={content?.phonePlaceholder}
         />
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="email"
           inputType="email"
-          placeholder={content?.placeholder4}
+          placeholder={content?.placeholderMail}
         />
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
-          placeholder={content?.placeholder5}
+          placeholder={content?.placeholderPass}
         />
         <AuthTextField
           inputClass="!pl-[11px]"
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
-          placeholder={content?.placeholder6}
+          placeholder={content?.confirmPass}
         />
       </div>
     </LoginSideBar>

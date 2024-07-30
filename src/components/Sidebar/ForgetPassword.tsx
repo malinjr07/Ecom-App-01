@@ -15,18 +15,18 @@ const ForgetPassword: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
-      codeSendBtn={content?.codeSendBtn}
+      title={content?.titleHiWelcome}
+      subTitle={content?.subTitleToLogin}
+      btnText={content?.btnConfirmText}
+      codeSendBtn={content?.codeBackBtn}
     >
       <AuthTextField
         groupClass="mb-10"
         labelClass="!normal-case !pb-2.5"
         onChangeCb={() => {}}
         identifier="phoneNumber"
-        placeholder={content?.placeholder}
-        label={content?.label}
+        placeholder={content?.enterTheCodeB}
+        label={content?.labelSendYouSms}
       />
     </LoginSideBar>
   );

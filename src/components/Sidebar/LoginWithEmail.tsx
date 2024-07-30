@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import LoginSideBar from "../common/LoginSideBar";
 import { commonSideBarProps } from "@/utils/type";
-import TextField from "../base/TextField";
 import { useRouter } from "next/router";
 import useTranslator from "@/utils/useTranslator";
 import { loginWithEmailContent } from "@/static/contents/login";
@@ -16,14 +15,14 @@ const LoginWithEmail: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
-      loginWithText={content?.loginWithText}
-      forgetPassUrl={content?.forgetPassUrl}
-      textAboveBtn={content?.textAboveBtn}
-      signUpUrl={content?.signUpUrl}
-      signUpText={content?.signUpText}
+      title={content?.titleHi}
+      subTitle={content?.subTitleContinue}
+      btnText={content?.btnLoginText}
+      loginWithText={content?.withPhonLog}
+      forgetPassUrl={content?.forgetUrl}
+      textAboveBtn={content?.dontHaveAcc}
+      signUpUrl={content?.signUpBtnUrl}
+      signUpText={content?.signUpBtn}
     >
       <div className=" space-y-[18px]">
         <AuthTextField
@@ -31,14 +30,14 @@ const LoginWithEmail: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
           identifier="email"
           inputType="email"
           labelClass="!text-[16px]"
-          label={content?.label}
-          placeholder={content?.placeholder}
+          label={content?.labelContinueFill}
+          placeholder={content?.placeEAddress}
         />
         <AuthTextField
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
-          placeholder={content?.placeholder2}
+          placeholder={content?.placeHoPass}
         />
       </div>
     </LoginSideBar>

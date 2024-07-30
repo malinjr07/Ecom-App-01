@@ -1,7 +1,6 @@
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import Button from "@/components/base/Button";
 import TextField from "@/components/base/TextField";
-import LoginSvg from "@/components/svg/LoginSvg";
 import { changePasswordContent } from "@/static/contents/login";
 import useTranslator from "@/utils/useTranslator";
 import { useRouter } from "next/router";
@@ -19,12 +18,12 @@ const ChangePassword = () => {
         }`}
       >
         <h6 className="text-base text-[#35332C] font-arabicBold">
-          {content?.title}
+          {content?.titleChangePass}
         </h6>
         <TextField
           inputClass="!border-black-primary !rounded-[5px]"
           labelClass="!normal-case !pb-0.5"
-          label={content?.label}
+          label={content?.labelOldPass}
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
@@ -32,16 +31,16 @@ const ChangePassword = () => {
         <TextField
           inputClass="!border-black-primary !rounded-[5px]"
           labelClass="!normal-case !pb-0.5"
-          label={content?.label2}
+          label={content?.labelNewPaWard}
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
-          caption={content?.caption}
+          caption={content?.passMustBe6}
         />
         <TextField
           inputClass="!border-black-primary !rounded-[5px]"
           labelClass="!normal-case !pb-0.5"
-          label={content?.label3}
+          label={content?.labelConfirm}
           onChangeCb={() => {}}
           identifier="password"
           inputType="password"
@@ -49,7 +48,7 @@ const ChangePassword = () => {
         <Button
           btnClass="!capitalize !font-arabicMedium py-3 !text-lg !rounded-md !mt-5 !text-white"
           variant="primary"
-          btnText={content?.btnText}
+          btnText={content?.btnTextSave}
           actionCb={() => {}}
         />
       </div>

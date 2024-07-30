@@ -77,15 +77,15 @@ const NotificationSideBar: FC<commonSideBarProps> = ({
           <>
             <div className="w-full flex flex-col justify-start items-center gap-6 pt-[22px] px-2 md:pl-5 md:pr-7">
               <NotificationDetails
-                title="Head text Here"
+                title={content?.notifyTitle}
                 url="/"
-                subTitle="text lorem Heretext lorem Heretext lorem Here"
+                subTitle={content?.notifySubTitle}
                 date="15/12/2024 - 05:01 PM"
               />
               <NotificationDetails
-                title="Head text Here"
+                title={content?.notifyTitle2}
                 url="/"
-                subTitle="text lorem Heretext lorem Heretext lorem Here"
+                subTitle={content?.notifySubTitle2}
                 date="15/12/2024 - 05:01 PM"
               />
             </div>
@@ -104,10 +104,10 @@ const NotificationSideBar: FC<commonSideBarProps> = ({
           <>
             <div className="w-full flex flex-col justify-start items-center gap-6 pt-[22px] pl-5 pr-7">
               <NotificationDetails
-                title="Head text Here offer"
+                title={content?.offerNotifyTitle}
                 url="/"
-                offerText="Discount offer"
-                offer="50%"
+                offerText={content?.offerNotifyDiscount}
+                offer={content?.ofrDiscountRate}
               />
             </div>
             {/* empty offers cards */}

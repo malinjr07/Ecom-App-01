@@ -3,7 +3,6 @@ import OrderCard from "./OrderCard";
 import { ordersType } from "@/utils/type";
 import orderImage from "/public/images/product/order-image.png";
 import { useRouter } from "next/router";
-import { changePasswordContent } from "@/static/contents/login";
 import useTranslator from "@/utils/useTranslator";
 import { orderProcessContent } from "@/static/contents/myOrder";
 const MyOrderSection = () => {

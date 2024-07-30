@@ -181,7 +181,7 @@ const LoginSideBar: FC<loginSideBarProps> = ({
                 <div className="w-full relative flex justify-center items-center ">
                   <span className="h-px w-full bg-black-primary absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 " />{" "}
                   <p className="text-sm font-arabicBold bg-white capitalize text-black-primary px-3 relative z-10 w-fit">
-                    {content?.loginWith}
+                    {content?.orLoginWith}
                   </p>
                 </div>
                 <div className="w-full flex justify-center items-center gap-x-[42px]">

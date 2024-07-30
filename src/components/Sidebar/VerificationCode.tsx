@@ -15,10 +15,10 @@ const VerificationCode: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
-      codeSendBtn={content?.codeSendBtn}
+      title={content?.hiTitle}
+      subTitle={content?.continueToLog}
+      btnText={content?.confirmBtn}
+      codeSendBtn={content?.btnAgainSend}
       hasSocialBtn={false}
     >
       <AuthTextField
@@ -26,7 +26,7 @@ const VerificationCode: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
         labelClass="!normal-case !pb-2.5 !font-arabicMedium !text-[15px] !text-black-primary"
         onChangeCb={() => {}}
         identifier="phoneNumber"
-        label={content?.label}
+        label={content?.labelEnterSentCode}
       />
     </LoginSideBar>
   );

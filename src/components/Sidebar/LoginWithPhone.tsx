@@ -15,19 +15,19 @@ const LoginWithPhone: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
-      signUpUrl={content?.signUpUrl}
-      forgetPassUrl={content?.forgetPassUrl}
-      loginWithText={content?.loginWithText}
-      textAboveBtn={content?.textAboveBtn}
-      signUpText={content?.signUpText}
+      title={content?.welcomeTitle}
+      subTitle={content?.fillTheSubTitle}
+      btnText={content?.LogTextBtn}
+      signUpUrl={content?.textSignUrl}
+      forgetPassUrl={content?.frgtPassUrl}
+      loginWithText={content?.withEmailText}
+      textAboveBtn={content?.haveAnAccount}
+      signUpText={content?.textSign}
     >
       <AuthTextField
         onChangeCb={() => {}}
         identifier="phoneNumber"
-        placeholder={content?.placeholder}
+        placeholder={content?.placePhoneNumber}
       />
     </LoginSideBar>
   );

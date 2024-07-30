@@ -17,7 +17,7 @@ const GiftCart = () => {
       <GiftSvg />
       <div className="text-black-secondary space-y-2 sm:space-y-[22px]">
         <p className="capitalize text-sm font-arabic text-left">
-          {content?.productName}
+          {content?.giftCartProductName}
         </p>
         <h6 className="capitalize text-base font-arabicBold text-left">
           {content?.giftText}

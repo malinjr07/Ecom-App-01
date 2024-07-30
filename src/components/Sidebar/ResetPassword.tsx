@@ -15,9 +15,9 @@ const ResetPassword: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       groupClass="md:w-[534px]"
       value={viewCart}
       setCart={actionCb}
-      title={content?.title}
-      subTitle={content?.subTitle}
-      btnText={content?.btnText}
+      title={content?.titleFrgtUrPass}
+      subTitle={content?.subTitlePlease}
+      btnText={content?.sendEmail}
       hasSocialBtn={false}
       codeSendBtn={content?.codeSendBtn}
     >
@@ -26,7 +26,7 @@ const ResetPassword: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
         labelClass="!normal-case !pb-2.5"
         onChangeCb={() => {}}
         identifier="email"
-        placeholder={content?.placeholder}
+        placeholder={content?.placeholderEmail}
         inputType="email"
       />
     </LoginSideBar>

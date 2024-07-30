@@ -46,7 +46,7 @@ const AddedShoppingCart: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
         {/* -------------------- LatestProductCart --------------------- */}
         <div className="w-full pt-2.5">
           <h6 className="pl-6 capitalize font-arabicMedium text-xl text-black-700 text-left">
-            {content?.title}
+            {content?.latestProductsTitle}
           </h6>
           <div className="pt-7 px-1.5 w-full flex flex-row flex-wrap justify-center items-center gap-y-4 gap-x-2 sm:gap-y-[30px] sm:gap-x-7">
             {/* <LatestProductCart title="" /> */}
@@ -57,12 +57,12 @@ const AddedShoppingCart: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
           <Button
             btnClass="!w-[48%] !capitalize !font-arabic !pb-2.5 !text-lg sm:!text-xl"
             variant="outlined"
-            btnText={content?.btnText}
+            btnText={content?.continueMarketing}
           />
           <Button
             btnClass="!w-[48%] !capitalize !font-arabic !pb-2.5 !text-lg sm:!text-xl"
             variant="primary"
-            btnText={content?.btnText2}
+            btnText={content?.completeTheOrder}
           />
         </div>
       </div>

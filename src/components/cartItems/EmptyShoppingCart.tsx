@@ -14,10 +14,10 @@ const EmptyShoppingCart = () => {
         <EmptyShoppingCartSvg />
       </div>
       <h6 className="text-xl text-center text-black-secondary font-arabicBold">
-        {content?.title}
+        {content?.emptyCartTitle}
       </h6>
       <p className="text-lg text-center text-black-secondary font-arabicLight">
-        {content?.subTitle}
+        {content?.emptyCartSubTitle}
       </p>
     </div>
   );

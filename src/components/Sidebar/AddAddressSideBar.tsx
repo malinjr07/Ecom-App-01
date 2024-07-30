@@ -5,10 +5,8 @@ import { commonSideBarProps, dropDowns } from "@/utils/type";
 import TextField from "../base/TextField";
 import SelectField from "../base/SelectField";
 import { cityDropDown, countryDropDown } from "@/static";
-import SearchDroopDown from "../base/SearchDropDown";
 import SearchSelectField from "../base/SearchSelectField";
 import NumberField from "../base/NumberField";
-import SearchField from "../base/SearchField";
 import { useRouter } from "next/router";
 import { addAddressContent } from "@/static/contents/sidebar";
 import useTranslator from "@/utils/useTranslator";
@@ -43,7 +41,7 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
     setAddressForm,
     addresses,
     setAddresses,
-    userAddress
+    userAddress,
   } = useContext<any>(AppContext);
 
   const router = useRouter();
@@ -68,8 +66,8 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
   };
 
   // Checking all address properties are filled for button enable or disable
-  const allAddressPropertiesFullFilled = address && Object?.values(address).every(value => !!value);
-
+  const allAddressPropertiesFullFilled =
+    address && Object?.values(address).every((value) => !!value);
 
   return (
     <SideBar
@@ -77,7 +75,10 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
       setCart={actionCb}
       groupClass="!bg-white lg:w-[576px]"
     >
-      <form onSubmit={(e) => handleAddressFormSubmit(e)} autoComplete="chrome-off">
+      <form
+        onSubmit={(e) => handleAddressFormSubmit(e)}
+        autoComplete="chrome-off"
+      >
         <div
           className={`w-full flex flex-col justify-start items-center gap-[30px] relative min-h-screen ${
             showSearchArea ? "pt-[26px]" : "pt-11"
@@ -102,10 +103,12 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
                   }`}
                 ></i>
               </span>
-              <span>{content?.btnText3}</span>
+              <span>{content?.btnBack3}</span>
             </button>
           )}
-          <h5 className="text-xl font-arabicBold">{content?.title}</h5>
+          <h5 className="text-xl font-arabicBold">
+            {content?.titleAddAddress}
+          </h5>
           {!address && !showSearchArea && (
             <button
               type="button"
@@ -114,7 +117,7 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
                 locale === "ar" ? " flex-row-reverse" : " flex-row"
               }`}
             >
-              <span>{content?.btnText2}</span>
+              <span>{content?.btnChooseMap}</span>
               <GmapSvg />
             </button>
           )}
@@ -122,7 +125,6 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
           {/* map will implement here */}
           {showSearchArea && (
             <div className="w-full h-[493px] rounded-md relative">
-
               {/* <div className=" absolute top-4 left-1/2 -translate-x-1/2">
                 <div className="w-[280px] sm:w-[372px] md:w-[410px] relative">
                   <SearchField
@@ -142,99 +144,104 @@ const AddAddressSideBar: FC<commonSideBarProps> = ({ viewCart, actionCb }) => {
                   )}
                 </div>
               </div> */}
-              <Map showSearchArea={showSearchArea}  />
+              <Map showSearchArea={showSearchArea} />
             </div>
           )}
-          {address && !showSearchArea &&  (
+          {address && !showSearchArea && (
             <div className="w-full">
-              <Map showSearchArea={false}  />
+              <Map showSearchArea={false} />
             </div>
           )}
           {!showSearchArea && (
             <div className="mx-auto w-full md:w-[560px] lg:w-full space-y-5 md:px-2 pt-8">
-            <TextField
-              identifier="name"
-              onChangeCb={handleAddressFormInput}
-              placeholder={content?.placeholder}
-              inputClass="!text-[16px]"
-            />
-            <NumberField
-              identifier="phone"
-              onChangeCb={handleAddressFormInput}
-              prefixIcon="fa-solid fa-caret-down"
-              suffixIcon="fa-solid fa-caret-down"
-              inputType="number"
-              placeholder={content?.placeholder2}
-            />
-            <NumberField
-              identifier="phone"
-              onChangeCb={handleAddressFormInput}
-              prefixIcon="fa-solid fa-caret-down"
-              suffixIcon="fa-solid fa-caret-down"
-              inputType="number"
-              placeholder={content?.placeholder3}
-              option={content?.option}
-            />
-            <SelectField
-              dropdownItems={countryDropDown}
-              currentItem={selectedCountry?.name}
-              onChangeCb={(item: dropDowns) => {
-                setSelectedCountry(item);
-                handleAddressFormInput(item);
-                console.log("select country", item);
-                setAddressForm({ ...addressForm, ["country"]: item.name });
-              }}
-            />
-            <SearchSelectField
-              dropdownItems={cityDropDown}
-              currentItem={selectedCity?.name}
-              onChangeCb={(item: dropDowns) => {
-                setSelectedCity(item);
-                handleAddressFormInput(item);
-                console.log("city", item);
-                setAddressForm({ ...addressForm, ["city"]: item.name });
-              }}
-            />
-            <TextField
-              identifier="city"
-              onChangeCb={handleAddressFormInput}
-              placeholder={content?.placeholder4}
-            />
-            <TextField
-              identifier="street"
-              onChangeCb={handleAddressFormInput}
-              placeholder={content?.placeholder5}
-            />
-            <TextField
-              identifier="specialPlace"
-              onChangeCb={handleAddressFormInput}
-              placeholder={content?.placeholder6}
-            />
-          </div>
+              <TextField
+                identifier="name"
+                onChangeCb={handleAddressFormInput}
+                placeholder={content?.phAbdullahElz}
+                inputClass="!text-[16px]"
+              />
+              <NumberField
+                identifier="phone"
+                onChangeCb={handleAddressFormInput}
+                prefixIcon="fa-solid fa-caret-down"
+                suffixIcon="fa-solid fa-caret-down"
+                inputType="number"
+                placeholder={content?.phMobNumber}
+              />
+              <NumberField
+                identifier="phone"
+                onChangeCb={handleAddressFormInput}
+                prefixIcon="fa-solid fa-caret-down"
+                suffixIcon="fa-solid fa-caret-down"
+                inputType="number"
+                placeholder={content?.phSecondNumber}
+                option={content?.option}
+              />
+              <SelectField
+                dropdownItems={countryDropDown}
+                currentItem={selectedCountry?.name}
+                onChangeCb={(item: dropDowns) => {
+                  setSelectedCountry(item);
+                  handleAddressFormInput(item);
+                  console.log("select country", item);
+                  setAddressForm({ ...addressForm, ["country"]: item.name });
+                }}
+              />
+              <SearchSelectField
+                dropdownItems={cityDropDown}
+                currentItem={selectedCity?.name}
+                onChangeCb={(item: dropDowns) => {
+                  setSelectedCity(item);
+                  handleAddressFormInput(item);
+                  console.log("city", item);
+                  setAddressForm({ ...addressForm, ["city"]: item.name });
+                }}
+              />
+              <TextField
+                identifier="city"
+                onChangeCb={handleAddressFormInput}
+                placeholder={content?.placeholderCity}
+              />
+              <TextField
+                identifier="street"
+                onChangeCb={handleAddressFormInput}
+                placeholder={content?.neighborhoodPh}
+              />
+              <TextField
+                identifier="specialPlace"
+                onChangeCb={handleAddressFormInput}
+                placeholder={content?.phSpecial}
+              />
+            </div>
           )}
           {showSearchArea ? (
             <Button
-            btnClass={`!sticky !mt-auto !bottom-0 ${address ? "!bg-[#000] !text-white" : "bg-[#898989] !text-white"} !rounded-none !font-medium !text-sm !py-6 !z-30`}
-            variant="primary"
-            btnText={content?.btnText}
-            btnType="submit"
-            actionCb={() => {
-              setShowSearchArea(!showSearchArea);
-            }}
-            disabled={address ? false : true}
-          />
+              btnClass={`!sticky !mt-auto !bottom-0 ${
+                address ? "!bg-[#000] !text-white" : "bg-[#898989] !text-white"
+              } !rounded-none !font-medium !text-sm !py-6 !z-30`}
+              variant="primary"
+              btnText={content?.btnAddress}
+              btnType="submit"
+              actionCb={() => {
+                setShowSearchArea(!showSearchArea);
+              }}
+              disabled={address ? false : true}
+            />
           ) : (
             <Button
-            btnClass={`!sticky !mt-auto !bottom-0 ${allAddressPropertiesFullFilled ? "!bg-[#000] !text-white" : "bg-[#898989] !text-ash-500"} !rounded-none !font-medium !text-sm !py-6 !z-30`}
-            variant="primary"
-            btnText={"Complete"}
-            btnType="submit"
-            actionCb={() => {
-              actionCb(!viewCart)
-            }}
-          />
+              btnClass={`!sticky !mt-auto !bottom-0 ${
+                allAddressPropertiesFullFilled
+                  ? "!bg-[#000] !text-white"
+                  : "bg-[#898989] !text-ash-500"
+              } !rounded-none !font-medium !text-sm !py-6 !z-30`}
+              variant="primary"
+              btnText={content?.btnComplete}
+              btnType="submit"
+              actionCb={() => {
+                actionCb(!viewCart);
+              }}
+            />
           )}
-
         </div>
       </form>
     </SideBar>

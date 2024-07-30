@@ -15,10 +15,10 @@ const AddedCheckedCart = () => {
         <i className="fa-solid fa-circle-check text-[80px] text-[#4ECB71] relative z-10"></i>
       </div>
       <h6 className="text-lg md:text-xl text-center text-black-secondary font-arabicBold">
-        {content?.title}
+        {content?.productHasBeenAdded}
       </h6>
       <p className="text-lg md:text-xl text-center text-black-secondary font-arabicBold border-b border-ash-400 pb-[18px]">
-        {content?.price}
+        {content?.priceIs125}
       </p>
     </div>
   );
